@@ -30,18 +30,14 @@ This Android app provides a platform for stocks trading, including, features suc
 * Open the app inside [Android Studio](https://developer.android.com/studio)
 * Make sure to use JDK 1.8.0 (The project uses Java 8)
 * In Android Studio under `File` click `Sync project with Grade Files`.
-* Add the `Pixel 2 XL 28` (App has not been tested with other emulator device) emulator device by clicking `AVD Manager` as shown below. 
-
-  [![add emulator](./other/add-emulator.png)](). 
-  
-* On the pop up window, click the `Create Virtual Device` button and add `Pixel 2 XL 28` [![add virtual device](./other/add-virtual-device.png)]()
-* Once you have successfully added the virtual device, you should see it as shown below. Now you can click the run button and it should load the emulator with the app.
-[![add emulator](./other/run-app.png)]()
-* The emulator will launch and will automatically open the stock app as shown below. [![lauched app](./other/lauch-app.png)]()
-* Note that **no API calls will work** i.e. the auto complete or search button will not work since the backend has been removed from `Google Cloud platform (GCP)`. You might have to either deploy the backend or try to figure out how to redirect the API call to a locally run backend. The code for backend can be found [here](https://github.com/rehmanis/stocks-angular/blob/master/routes/api.js) for the one used in this app. There is also a [serverless version](https://github.com/rehmanis/CSCI571-Stocks-Serverless/blob/master/index.js) for the backend. **Note** for any API that you use such as [`News API`](https://newsapi.org/) or [`Tingo`](https://api.tiingo.com/) for stocks, you will have to generate a token/API key and replace it in the backend code. As of now the backend is using a hardcoded token for these api in the NodeJs calls (very bad practice) as can be seen [here](https://github.com/rehmanis/stocks-angular/blob/master/routes/api.js#L27) where `token=` is hardcoded.
+* Add the `Pixel 2 XL 28` (App has not been tested with other emulator device) emulator device by clicking `AVD Manager` 
+* On the pop up window, click the `Create Virtual Device` button and add `Pixel 2 XL 28` 
+* Once you have successfully added the virtual device, you can click the run button and it should load the emulator with the app.
+* The emulator will launch and will automatically open the stock app.
+* Note that **no API calls will work** i.e. the auto complete or search button will not work since the backend has been removed from `Google Cloud platform (GCP)`. You might have to either deploy the backend or try to figure out how to redirect the API call to a locally run backend. **Note** for any API that you use such as [`News API`](https://newsapi.org/) or [`Tingo`](https://api.tiingo.com/) for stocks, you will have to generate a token/API key and replace it in the backend code.
 * Places where `GCP` deployed backend API that was being used and is now removed from GCP are as follows: 
   * [DetailsActivity.java:L56-L59](https://github.com/rehmanis/stocks-android/blob/master/app/src/main/java/com/example/csci571andriodstocks/DetailsActivity.java#L56-L59)
   * [MainActivity.java:L61-L62](https://github.com/rehmanis/stocks-android/blob/master/app/src/main/java/com/example/csci571andriodstocks/MainActivity.java#L61-L62)
   
-###Youtube Video Link
+### Youtube Video Link
 [StockWiz Android App](https://youtu.be/HLvD6uXA0J0)
